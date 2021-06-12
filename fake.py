@@ -94,9 +94,9 @@ class RealCam:
     def update(self):
         while not self.stopped:
             grabbed, frame = self.cam.read()
-            if grabbed:
-                with self.lock:
-                    self.frame = frame.copy()
+            with self.lock:
+                if grabbed:
+                        self.frame = frame.copy()
 
     def read(self):
         with self.lock:
