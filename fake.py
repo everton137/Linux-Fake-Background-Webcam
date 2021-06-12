@@ -300,7 +300,7 @@ then scale & crop the image so that its pixels retain their aspect ratio."""
         while True:
             frame = self.real_cam.read()
             if frame is None:
-                time.sleep(0.1)
+                #time.sleep(0.1)
                 continue
             frame = self.compose_frame(frame)
             self.put_frame(frame)
